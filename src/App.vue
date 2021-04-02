@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <transition name="fade">
+      <div>
+        <Gnb/>
+        <router-view/>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import Gnb from "@/components/Gnb";
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: {Gnb}
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="less">
+@import "~@/less/font";
+@import "~@/less/common";
+@import "~@/less/base";
+@import "~@/less/asset";
+img { backface-visibility: hidden; }
+#app > div { .abs; .lt; .tc;
+  div + div { color:#333; .p(40,15); .-box; .w(70%); .mh-c; .tl; word-break: break-all; }
 }
 </style>
